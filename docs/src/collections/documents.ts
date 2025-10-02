@@ -1,4 +1,5 @@
 import { defineCollection } from 'astro:content';
+import { z } from 'zod';
 
 import { ObsidianMdLoader, ObsidianWikiLinkSchema } from "astro-loader-obsidian";
 
@@ -20,7 +21,12 @@ export default {
       images: ObsidianWikiLinkSchema.extend({
         href: image().optional(),
       }).array().optional(),
-      cover: image().optional(),
+      cover: z.union([z.string(), z.object({
+        src: z.string(),
+        width: z.number(),
+        height: z.number(),
+        format: z.string(),
+      })]).optional(),
       image: image().optional(),
     }),
   })
