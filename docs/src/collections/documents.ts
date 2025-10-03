@@ -15,6 +15,7 @@ export default {
       author: config.author,
       base: ENV.OBSIDIAN_VAULT_DIR ?? DEFAULT_VAULT_DIR,
       url: '',
+      tagsUrl: 'about/tags',
       wikilinkFields: ['relateds']
     }),
     schema: ({ image }) => DocumentSchema.extend({

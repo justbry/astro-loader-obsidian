@@ -11,7 +11,8 @@ export default {
 	[TAGS_COLLECTION_NAME]: defineCollection({
 		loader: ObsidianMdLoader({
 			base: `${ENV.OBSIDIAN_VAULT_DIR ?? DEFAULT_VAULT_DIR}/About/Tags`,
-			url: 'tags',
+			url: '',
+			tagsUrl: 'about/tags',
 			pattern: '**/*.md',
 		}),
 		schema:  () => TagSchema,
